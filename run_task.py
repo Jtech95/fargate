@@ -4,6 +4,7 @@ def handler(event,context):
   response = client.run_task(
   cluster='FG-cluster', # name of the cluster
   launchType = 'FARGATE',
+  group = 'service:FG-service-apacheserver',
   taskDefinition='FG-test:2', # replace with your task definition name and revision
   count = 1,
   platformVersion='LATEST',
